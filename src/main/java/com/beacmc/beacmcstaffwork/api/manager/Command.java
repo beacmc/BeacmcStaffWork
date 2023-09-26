@@ -1,2 +1,6 @@
-package com.beacmc.beacmcstaffwork.api.manager;public class Command {
+package com.beacmc.beacmcstaffwork.api.manager;
+
+import org.bukkit.command.CommandExecutor;
+
+public abstract class Command implements CommandExecutor {
 }

@@ -1,8 +1,8 @@
-package com.beacmc.beacmcstaffworkv2.discord;
+package com.beacmc.beacmcstaffwork.discord;
 
 
-import com.beacmc.beacmcstaffworkv2.BeacmcStaffWork;
-import com.beacmc.beacmcstaffworkv2.manager.Config;
+import com.beacmc.beacmcstaffwork.BeacmcStaffWork;
+import com.beacmc.beacmcstaffwork.manager.Config;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;

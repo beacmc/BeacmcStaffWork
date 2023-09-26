@@ -1,0 +1,143 @@
+settings:
+  # технисческая поддержка тут:
+  # https://discord.gg/QSAdaTJuET
+
+  prefix: "#FF8600&lʙ#FF8A00&lᴇ#FF8E00&lᴀ#FF9200&lᴄ#FF9500&lᴍ#FF9900&lᴄ#FF9D00&ls#FFA100&lᴛ#FFA500&lᴀ#FFA900&lғ#FFAD00&lғ#FFB100&lᴡ#FFB400&lᴏ#FFB800&lʀ#FFBC00&lᴋ #FFC000&l▸&7"
+
+  # информирование об обновлении плагина.
+  update-check: true
+
+  time-format: "dd.MM.yyyy HH:mm:ss"
+  discord:
+
+    # Если установлено значение true, то строка
+    # token, channel-id, guild-id не может быть пустой!
+    enable: false
+
+    # токен Вашего бота
+    token: ""
+
+    # ID канала.
+    channel-id: 0000000000000000000000
+
+    # ID сообщества.
+    guild-id: 00000000000000000000000
+
+    # есть поддержка PlaceholderAPI
+    on-enable-work:
+      title: "%player_name%"
+      description: |
+        Начал свою работу
+
+      color: "#FFBB00"
+
+    # есть поддержка PlaceholderAPI
+    on-disable-work:
+      title: "%player_name%"
+      description: |
+        Закончил свою работу
+      color: "#FFBB00"
+
+
+  # поддержка PlaceholderAPI
+  placeholderapi:
+
+    # настройка заполнителей
+    placeholders:
+      on-work: "&aНа работе"
+      not-work: "&cНе на работе"
+      time-in-work: "&6{days} &7дней &6{hours} &7часов &6{minutes} &7минут &6{seconds} &7секунд"
+
+
+  actions:
+
+    # доступные плейсхолдеры: %user_name% - выводит имя модератора
+    groups-on-work:
+
+      # тут может быть любое имя
+      # вашей группы.
+      example_group:
+        - '[console] lp user %player_name% parent add moder'
+        - '[broadcast] %player_name% начал работу!'
+        -
+      helper:
+        - '[console] lp user %player_name% meta setsuffix " onWork"'
+        - '[message_to_moderators] &7Модератор &6%player_name% &7начал работу.'
+
+    groups-off-work:
+
+
+      example_group:
+        - '[console] lp user %player_name% parent remove moderator'
+        - '[broadcast] %player_name% закончил работу!'
+        -
+      helper:
+        - '[console] lp user %player_name% meta clear'
+        - '[message_to_moderators] &7Модератор &6%player_name% &7окончил работу.'
+
+  work:
+
+    # блокировать ломание блоков во время работы
+    disable-break-block: true
+
+    # блокирование установки блоков во время работы
+    disable-place-block: true
+
+    # блокирование наносение урона любой сущности
+    #
+    # P.S. могут быть конфликты с плагином CombatLogX
+    disable-entity-damage: true
+
+  # все сообщения плагина
+  messages:
+    no-permission: "{PREFIX} &7Недостаточно полномочий для использования этой команды"
+    reload: "{PREFIX} &7Конфигурация перезагружена"
+    error-use: "{PREFIX} &7неверное использование команды"
+    already-worked: "{PREFIX} &7Вы уже находитесь в режиме работы"
+    not-worked: "{PREFIX} &7Вы не находитесь в режиме работы"
+    on-enable-work: "{PREFIX} &7Режим работы успешно начат"
+    on-disable-work: "{PREFIX} &7Режим работы успешно окончен"
+    no-group: "{PREFIX} &7Настройка для Вашей группы остуствует. Обратитесь к администрации"
+    block-place-on-work: "{PREFIX} &7Во время режима работы запрещено ставить блоки"
+    block-break-on-work: "{PREFIX} &7Во время режима работы запрещено ломать блоки"
+    entity-damage-on-work: "{PREFIX} &7Во время режима работы запрещено наносить урон"
+    damager-damage-on-work: "{PREFIX} &7Этот игрок находится в режиме работы."
+    help:
+      - " "
+      - "#FF8600/sw on &7- &fначать работу"
+      - "#FF8600/sw off &7- &fокончить работу работу"
+      - ""
+      - "#FF8600/swa reload &7- &fперезапустить плагин"
+      - "  "
+    update-check-player:
+      - " "
+      - "   #FF8600&lʙᴇᴀᴄᴍᴄsᴛᴀғғᴡᴏʀᴋ "
+      - "   #FF8600&l&m     "
+      - "   #FF8600▶ &7вышло новое обновление плагина"
+      - "   &7текущая версия: #FF8600{current_version}"
+      - "   &7самая новая версия: #FF8600{latest_version}"
+      - " "
+    update-check-console:
+      - " "
+      - "   #FF8600&lʙᴇᴀᴄᴍᴄsᴛᴀғғᴡᴏʀᴋ "
+      - "   #FF8600&l&m     "
+      - "   #FF8600▶ &7вышло новое обновление плагина"
+      - "   &7текущая версия: #FF8600{current_version}"
+      - "   &7самая новая версия: #FF8600{latest_version}"
+      - " "
+
+
+  # тайтлы для игроков
+  titles:
+    on-enable-work:
+      title: "#FF8600&lʙ#FF8A00&lᴇ#FF8E00&lᴀ#FF9200&lᴄ#FF9500&lᴍ#FF9900&lᴄ#FF9D00&ls#FFA100&lᴛ#FFA500&lᴀ#FFA900&lғ#FFAD00&lғ#FFB100&lᴡ#FFB400&lᴏ#FFB800&lʀ#FFBC00&lᴋ"
+      subtitle: "&7работа успешно начата"
+    on-disable-work:
+      title: "#FF8600&lʙ#FF8A00&lᴇ#FF8E00&lᴀ#FF9200&lᴄ#FF9500&lᴍ#FF9900&lᴄ#FF9D00&ls#FFA100&lᴛ#FFA500&lᴀ#FFA900&lғ#FFAD00&lғ#FFB100&lᴡ#FFB400&lᴏ#FFB800&lʀ#FFBC00&lᴋ"
+      subtitle: "&7работа успешно окончена"
+
+
+  # права
+  permissions:
+    staffworkadmin: "staffwork.admin"
+    staffwork: "staffwork.use"

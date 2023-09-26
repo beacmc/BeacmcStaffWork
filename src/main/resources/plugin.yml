@@ -1,4 +1,19 @@
-name: BeacmcStaffWorkv2
+name: BeacmcStaffWork
 version: '${project.version}'
-main: com.beacmc.beacmcstaffworkv2.BeacmcStaffWorkv2
+main: com.beacmc.beacmcstaffwork.BeacmcStaffWork
 api-version: 1.16
+depend:
+  - LuckPerms
+softdepend:
+  - PlaceholderAPI
+author: beacmc
+commands:
+  staffwork:
+    aliases:
+      - sw
+      - staffw
+      - swork
+  staffworkadmin:
+    aliases:
+      - swa
+      - sworkadmin
