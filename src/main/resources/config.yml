@@ -7,7 +7,6 @@ settings:
   # информирование об обновлении плагина.
   update-check: true
 
-  time-format: "dd.MM.yyyy HH:mm:ss"
   discord:
 
     # Если установлено значение true, то строка
@@ -42,31 +41,49 @@ settings:
   # поддержка PlaceholderAPI
   placeholderapi:
 
+    # Заполнители:
+    #
+    # %beacmcstaffwork_player_work% - выведит сообщение
+    # которое скажет, находится ли модератор на работе
+    #
+    # %beacmcstaffwork_moderators_on_work% - выведит количевство
+    # модераторов находащихся в режиме работы
+    #
+    # %beacmcstaffwork_time_in_work% - выведит количевство дней, часов,
+    # минут и секунд сколько модератор находился в режиме работы
+
     # настройка заполнителей
     placeholders:
       on-work: "&aНа работе"
       not-work: "&cНе на работе"
+
+      # формат заполнителя %beacmcstaffwork_time_in_work%
       time-in-work: "&6{days} &7дней &6{hours} &7часов &6{minutes} &7минут &6{seconds} &7секунд"
 
+  # Поддержка PlaceholderAPI
+  #
+  # Список триггеров (action)
+  # [console] - отправка команд от имени консоли
+  # [player] - отправка команд от имени модератора
+  # [message_to_moderators] - отошлёт сообщение всем модераторам у которых
+  # есть право beacmcstaffwork.view
+  #
+  # [broadcast] - отправить сообщение всем онлайн игрокам
+  #
+  # [sound] - отправить звук модератору. Список звуков:
+  # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
 
   actions:
+    # ПРИМЕЧАНИЕ: групп может быть сколько угодно!
 
-    # доступные плейсхолдеры: %user_name% - выводит имя модератора
     groups-on-work:
-
-      # тут может быть любое имя
-      # вашей группы.
-      example_group:
+      example_group: # тут название вашей группы
         - '[console] lp user %player_name% parent add moder'
         - '[broadcast] %player_name% начал работу!'
-        -
       helper:
         - '[console] lp user %player_name% meta setsuffix " onWork"'
         - '[message_to_moderators] &7Модератор &6%player_name% &7начал работу.'
-
     groups-off-work:
-
-
       example_group:
         - '[console] lp user %player_name% parent remove moderator'
         - '[broadcast] %player_name% закончил работу!'
@@ -83,9 +100,7 @@ settings:
     # блокирование установки блоков во время работы
     disable-place-block: true
 
-    # блокирование наносение урона любой сущности
-    #
-    # P.S. могут быть конфликты с плагином CombatLogX
+    # блокирование наносение урона игроку
     disable-entity-damage: true
 
   # все сообщения плагина
@@ -109,6 +124,9 @@ settings:
       - ""
       - "#FF8600/swa reload &7- &fперезапустить плагин"
       - "  "
+
+    # отошлёт игроку об обновлении плагина, если у него
+    # есть право beacmcstaffwork.update
     update-check-player:
       - " "
       - "   #FF8600&lʙᴇᴀᴄᴍᴄsᴛᴀғғᴡᴏʀᴋ "
@@ -117,6 +135,7 @@ settings:
       - "   &7текущая версия: #FF8600{current_version}"
       - "   &7самая новая версия: #FF8600{latest_version}"
       - " "
+
     update-check-console:
       - " "
       - "   #FF8600&lʙᴇᴀᴄᴍᴄsᴛᴀғғᴡᴏʀᴋ "
@@ -136,8 +155,3 @@ settings:
       title: "#FF8600&lʙ#FF8A00&lᴇ#FF8E00&lᴀ#FF9200&lᴄ#FF9500&lᴍ#FF9900&lᴄ#FF9D00&ls#FFA100&lᴛ#FFA500&lᴀ#FFA900&lғ#FFAD00&lғ#FFB100&lᴡ#FFB400&lᴏ#FFB800&lʀ#FFBC00&lᴋ"
       subtitle: "&7работа успешно окончена"
 
-
-  # права
-  permissions:
-    staffworkadmin: "staffwork.admin"
-    staffwork: "staffwork.use"
